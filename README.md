@@ -5,6 +5,8 @@
 1. warmup epoch 6, SSD_vgg get 78.53mAP, as default
 
 
+## SSD framework
+![avatar](v2-a43295a3e146008b2131b160eec09cd4_r.jpg)
 
 
 
