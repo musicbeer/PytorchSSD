@@ -54,7 +54,7 @@ parser.add_argument('-max', '--max_epoch', default=300,
                     type=int, help='max epoch for retraining')
 parser.add_argument('--weight_decay', default=5e-4,
                     type=float, help='Weight decay for SGD')
-parser.add_argument('-we', '--warm_epoch', default=1,
+parser.add_argument('-we', '--warm_epoch', default=6,
                     type=int, help='max epoch for retraining')
 parser.add_argument('--gamma', default=0.1,
                     type=float, help='Gamma update for SGD')
