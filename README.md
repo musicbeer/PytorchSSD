@@ -1,3 +1,18 @@
+# pytorch detection research
+
+## training tricks
+
+1. warmup epoch 6, SSD_vgg get 78.53mAP, as default
+
+
+
+
+
+
+
+
+
+
 # Pytorch SSD Series
 ## Support Arc:
 * SSD [SSD: Single Shot Multibox  Detector](https://arxiv.org/abs/1512.02325)
