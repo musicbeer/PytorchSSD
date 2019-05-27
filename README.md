@@ -11,7 +11,8 @@
 ## SSD framework
 ![avatar](https://github.com/musicbeer/image/blob/master/v2-a43295a3e146008b2131b160eec09cd4_r.jpg?raw=true)
 
-
+### backbone
+![avatar](https://github.com/musicbeer/image/blob/master/detection/2018081115024484.png?raw=true)
 
 
 
