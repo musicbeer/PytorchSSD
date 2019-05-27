@@ -11,8 +11,8 @@ import torch.backends.cudnn as cudnn
 import torch.optim as optim
 import torch.utils.data as data
 
-from data import VOCroot, COCOroot, VOC_300, VOC_512, COCO_300, COCO_512, COCO_mobile_300, AnnotationTransform, \
-    COCODetection, VOCDetection, detection_collate, BaseTransform, preproc
+from data import VOCroot, VOC_300,YOLO_300, VOC_512, AnnotationTransform, \
+    VOCDetection, detection_collate, BaseTransform, preproc#, COCOroot, COCO_300, COCO_512, COCO_mobile_300, COCODetection
 from layers.functions import Detect, PriorBox
 from layers.modules import MultiBoxLoss
 from utils.nms_wrapper import nms
@@ -25,8 +25,8 @@ def str2bool(v):
 
 parser = argparse.ArgumentParser(
     description='Receptive Field Block Net Training')
-parser.add_argument('-v', '--version', default='RFB_vgg',
-                    help='RFB_vgg ,RFB_E_vgg RFB_mobile SSD_vgg version.')
+parser.add_argument('-v', '--version', default='yolov2_vgg',
+                    help='RFB_vgg ,RFB_E_vgg RFB_mobile SSD_vgg ssd_vgg_fpn yolov2_vgg version.')
 parser.add_argument('-s', '--size', default='300',
                     help='300 or 512 input size.')
 parser.add_argument('-d', '--dataset', default='VOC',
@@ -35,7 +35,7 @@ parser.add_argument(
     '--basenet', default='weights/vgg16_reducedfc.pth', help='pretrained base model')
 parser.add_argument('--jaccard_threshold', default=0.5,
                     type=float, help='Min Jaccard index for matching')
-parser.add_argument('-b', '--batch_size', default=32,
+parser.add_argument('-b', '--batch_size', default=64,
                     type=int, help='Batch size for training')
 parser.add_argument('--num_workers', default=4,
                     type=int, help='Number of workers used in dataloading')
@@ -97,6 +97,12 @@ elif args.version == 'RFB_mobile':
     cfg = COCO_mobile_300
 elif args.version == 'SSD_vgg':
     from models.SSD_vgg import build_net
+elif args.version == 'SSD_vgg_fpn':
+    from models.SSD_vgg_fpn import build_net
+elif args.version == 'yolov2_vgg':
+    from models.yolov2_vgg import build_net
+    from layers.functions import Detect, PriorBox
+    cfg=YOLO_300
 elif args.version == 'FSSD_vgg':
     from models.FSSD_vgg import build_net
 elif args.version == 'FRFBSSD_vgg':
