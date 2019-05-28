@@ -5,7 +5,8 @@
 1. warmup epoch 6, SSD_vgg get 78.53mAP, as default
 2. single scale ssd(yolov2 like network) reach 63.2mAP.
 3. rfb_vgg get 0.80mAP.
-4.FROM chaneyk/tensorflow-cuda9:latest-gpu-py3 
+4. backbone without pretrained, mAP is less than 0.70.
+5. FROM chaneyk/tensorflow-cuda9:latest-gpu-py3 
 
 
 ## SSD framework
