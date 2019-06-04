@@ -6,6 +6,27 @@
 2. single scale ssd(yolov2 like network) reach 63.2mAP.
 3. rfb_vgg get 0.80mAP.
 4. backbone without pretrained, mAP is less than 0.70.
+5. ssd_vgg 77.0mAP
+6. FSSD_resnet 78 mAP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 5. FROM chaneyk/tensorflow-cuda9:latest-gpu-py3 
 
 
